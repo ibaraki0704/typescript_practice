@@ -2,11 +2,10 @@ const modes = ["normal", "hard"] as const
 type Mode = typeof modes[number]
 const nextActions = ['play again', 'exit'] as const
 type NextAction = typeof nextActions[number]
-const gameTitles = ["hit and blow","janken"] as const
+const gameTitles = ["hit and blow","janken", "goemon"] as const
 type GameTitle = typeof gameTitles[number]
 type GameStore = {
-    "hit and blow": HitAndBlow
-    "janken":Janken
+    [key: string]: HitAndBlow | Janken
 }
 
 
